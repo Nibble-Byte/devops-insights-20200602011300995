@@ -5,15 +5,17 @@ function Zip(props) {
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
-        //const zipCodePattern = /^\d{5}$/;
-        //const valid = zipCodePattern.test(event.target.value);
-        //if (!valid) {
-        //    setValidationError('* should be a 5 digit number only');
-        //    props.clearResponse();
-        //} else {
+
+        var numbers = /^[0-9]+$/;
+        const zipCodePattern = /^\d{5}$/;
+
+        if (event.target.value.match(numbers) && !zipCodePattern.test(event.target.value)) {
+            setValidationError('* should be a 5 digit number only');
+            props.clearResponse();
+        } else {
             setValidationError('');
             props.onZipChange(event.target.value);
-        //}
+        }
     };
 
     return (
@@ -26,21 +28,21 @@ function Zip(props) {
                         }
                     `}
                     </style>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        id="usr" 
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="usr"
                         placeholder="US Zip Code (5 digit)"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
                                 validate(event);
                             }
                         }}
-                    ></input>   
+                    ></input>
                 </div>
             </div>
             <div className="pl-3 row">
-                <div className="text-danger small"> { validationError }</div>
+                <div className="text-danger small"> {validationError}</div>
             </div>
         </div>
     );
