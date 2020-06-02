@@ -10,12 +10,12 @@ function AppContainer(props) {
     const handleZipChange = async (input) => {
 
         var numbers = /^[0-9]+$/;
-        if (input.value.match(numbers)) {
-            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=imperial&zip=${input},us`)
+        if (input.match(numbers)) {
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&zip=${input},us`)
             const json = await res.json()
             setResponseData(json);
         } else {
-            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=6b7b471967dd0851d0010cdecf28f829`)
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=6b7b471967dd0851d0010cdecf28f829&units=metric`)
             const json = await res.json()
             setResponseData(json);
         }
