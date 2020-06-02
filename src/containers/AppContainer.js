@@ -9,17 +9,17 @@ function AppContainer(props) {
 
     const handleZipChange = async (input) => {
 
-        const res;
-
         var numbers = /^[0-9]+$/;
         if (input.value.match(numbers)) {
-            res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=imperial&zip=${input},us`)
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=imperial&zip=${input},us`)
+            const json = await res.json()
+            setResponseData(json);
         } else {
-            res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=6b7b471967dd0851d0010cdecf28f829`)
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=6b7b471967dd0851d0010cdecf28f829`)
+            const json = await res.json()
+            setResponseData(json);
         }
-        const json = await res.json()
-
-        setResponseData(json);
+        
     }
 
     const clearResponse = () => {
