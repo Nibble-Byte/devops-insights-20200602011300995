@@ -19,7 +19,7 @@ function AppContainer(props) {
         const res = await fetch(apiCall)
         const json = await res.json()
         setResponseData(json);
-        
+
     }
 
     const clearResponse = () => {
@@ -37,8 +37,9 @@ function AppContainer(props) {
                 <div className="col-sm-2"></div>
                 <ZipResponse responseData={responseData} clearResponse={clearResponse} />
                 <div className="col-sm-2"></div>
-            </div>
+            </div>            
         </div>
+
     );
 }
 
