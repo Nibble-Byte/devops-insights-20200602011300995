@@ -6,6 +6,14 @@ import Map from '../components/Map';
 import ZipResponse from '../components/ZipResponse';
 import Zip from '../components/Zip';
 
+/*
+The below is my attempt to get the ibm-cos-sdk module to work.
+But I continually encounter an error with the config variable.
+This will act as my last commit, as the rest of the app is functional.
+*/
+
+
+
 // import * as ibmdb from 'ibm_db';
 
 // const ibmdb = require('ibm_db');
