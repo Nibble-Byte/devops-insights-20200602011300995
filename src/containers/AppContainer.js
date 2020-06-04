@@ -21,7 +21,7 @@ var ibm = require('ibm-cos-sdk');
 var util = require('util');
 
 var config = {
-    endpoint: 'https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints',
+    endpoint: 's3.au-syd.cloud-object-storage.appdomain.cloud',
     apiKeyId: 'Vi2B5HNZfUq7b5sNwVKxZQcubaD2FodxT41U3BmjLi8B',    
     serviceInstanceId: 'crn:v1:bluemix:public:cloud-object-storage:global:a/af144da82cb544af93c55c819c4304be:ffa161a1-108e-4569-9c6d-d4692f2258ff::',
 };
